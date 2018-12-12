@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>用户列表</h1>
+        <table>
+            {% for k,v in user_dict.items()%}<!--这里迭代创建表格，并输出-->
+            <tr>
+                <td>{{ k }}</td>
+                <!--flask取字典值的三种方法-->
+                <td>{{ v.name }}</td>
+                <td>{{ v['name'] }}</td>
+                <td>{{ v.get('name') }}</td>
+                <td><a href="/detail/{{ k }}">查看详细</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+</body>
+</html>
